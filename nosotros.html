@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Futuro Ltda</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+    crossorigin="anonymous"
+  />
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <!--Barra de Navegacion-->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+            <img src="imagenes/AFLogo.png" alt="Futuro Ltda" height="60">
+          </a>
+          
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav justify-content-center w-100 mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="nosotros.html">Nosotros</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Servicios
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="empresa.html">Crea tu empresa</a></li>
+              <li><a class="dropdown-item" href="marketing.html">Marketing digital</a></li>
+              <li><a class="dropdown-item" href="asesoria.html">Asesoria personalizada</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="contacto.html">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="blog.html">Blog</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <a href="login.html" class="btn btn-outline-success">Login</a>
+        </form>
+        <div class="dropdown">
+          <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            🛒 Carrito <span class="badge bg-danger" id="carrito-count">0</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end p-3" style="min-width: 250px;">
+            <li>
+              <strong>Carrito de compras</strong>
+              <ul class="list-unstyled" id="carrito-lista"></ul>
+              <p class="mt-2">Total: $<span id="carrito-total">0</span></p>
+              <button class="btn btn-sm btn-danger w-100" onclick="vaciarCarrito()">Vaciar</button>
+            </li>
+          </ul>
+        </div>
+      </div>  
+      </div>
+    </div>
+  </nav>
+  <!-- Informacion de la empresa -->
+  <section class="container my-5">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h2>¿Quiénes somos?</h2>
+        <p>
+          En <strong>Futuro Ltda</strong>, somos una empresa dedicada a impulsar ideas innovadoras y acompañar a emprendedores en el camino hacia el éxito. Desde nuestra fundación, hemos apoyado a cientos de personas a crear sus negocios, fortalecer su marca digital y desarrollar sus habilidades.
+        </p>
+        <p>
+          Nuestro equipo está compuesto por profesionales en derecho empresarial, marketing digital y formación continua. Nos especializamos en brindar soluciones prácticas y personalizadas para que cada proyecto avance con firmeza.
+        </p>
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="imagenes/AFLogo.png" alt="Equipo Futuro Ltda" class="img-fluid rounded">
+      </div>
+    </div>
+  </section>
+
+
+  
+  
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+    crossorigin="anonymous"
+  ></script>
+  <!-- Footer -->
+  <footer class="bg-dark text-white pt-4 pb-2 mt-auto">
+    <div class="container text-center text-md-start">
+      <div class="row">
+        <!-- Sección 1 -->
+        <div class="col-md-4 mb-3">
+          <h5 class="text-uppercase">Futuro Ltda</h5>
+          <img src="imagenes/AFLogo.png" alt="Futuro Ltda" height="60">
+          <p>
+            Impulsando tus ideas hacia el futuro. Apoyamos emprendedores con servicios de asesoría, marketing y formación.
+          </p>
+        </div>
+  
+        <!-- Sección 2 -->
+        <div class="col-md-4 mb-3">
+          <h5 class="text-uppercase">Enlaces útiles</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="text-white text-decoration-none">Inicio</a></li>
+            <li><a href="nosotros.html" class="text-white text-decoration-none">Nosotros</a></li>
+            <li><a href="contacto.html" class="text-white text-decoration-none">Contacto</a></li>
+          </ul>
+        </div>
+  
+        <!-- Sección 3 -->
+        <div class="col-md-4 mb-3">
+          <h5 class="text-uppercase">Contacto</h5>
+          <p>Email: contacto@futuroltda.cl</p>
+          <p>Teléfono: +56 9 1234 5678</p>
+          <p>Dirección: Los Angeles, Chile</p>
+        </div>
+      </div>
+  
+      <hr class="border-light" />
+      <div class="text-center">
+        <p class="mb-0">&copy; 2025 Futuro Ltda. Todos los derechos reservados.</p>
+      </div>
+    </div>
+    <div class="text-center mt-3">
+      <a href="https://www.facebook.com/profile.php?id=61560354453187&locale=es_LA" target="_blank" class="text-white mx-2">
+        <i class="bi bi-facebook" style="font-size: 1.5rem;"></i>
+      </a>
+      <a href="https://www.instagram.com/asesoriasfuturoltda/" target="_blank" class="text-white mx-2">
+        <i class="bi bi-instagram" style="font-size: 1.5rem;"></i>
+      </a>
+      <a href="https://x.com/asesoriasfuturo" target="_blank" class="text-white mx-2">
+        <i class="bi bi-twitter" style="font-size: 1.5rem;"></i>
+      </a>
+      <a href="https://wa.me/56956602092" target="_blank" class="text-white mx-2">
+        <i class="bi bi-whatsapp" style="font-size: 1.5rem;"></i>
+      </a>
+    </div>
+  </footer>
+</script>
+<a href="https://wa.me/56956602092" target="_blank" class="whatsapp-fijo">
+  <img src="imagenes/whatsapp.png" alt="WhatsApp" width="75" height="75">
+</a>
+
+<style>
+  .whatsapp-fijo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+  }
+
+  .whatsapp-fijo:hover {
+    transform: scale(1.1);
+  }
+</style>
+</body>
+</html>
