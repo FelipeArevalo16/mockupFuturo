@@ -12,17 +12,6 @@
     integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
     crossorigin="anonymous"
   />
-  <style>
-    .btn {
-      transition: background-color 0.3s ease;
-    }
-  
-    .btn:hover {
-      background-color: #f27c1e; /* Naranjo */
-      border-color: #f27c1e;
-      color: white;
-    }
-  </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
     <!--Barra de Navegacion-->
@@ -92,84 +81,76 @@
             </li>
           </ul>
         </div>
-      </div>        
+      </div>  
       </div>
     </div>
   </nav>
-
-  <div class="container my-5">
-    <div class="row align-items-start">
-      <!-- Imagen + texto explicativo -->
-      <div class="col-md-6">
-        <img src="imagenes/callcntr.jpg" class="img-fluid mb-3" alt="Imagen relacionada al desarrollo">
-        <p><strong>CONTÁCTANOS</strong></p>
-        <p>
-            Consulta tus dudas en nuestro formulario y con nuestra asesoría pronto estarás creando tu empresa en Chile
-        </p>
-        <div class="row row-cols-2 g-3">
-            <div class="col d-flex align-items-center">
-              <img src="imagenes/ubicacion.png" alt="Dominio" class="me-2" width="50" height="50">
-              <span>Rengo 351 Of.901 Edificio Asturias, Los Ángeles, Chile 4440000</span>
-            </div>
-            <div class="col d-flex align-items-center">
-              <img src="imagenes/horario.png" alt="Responsive" class="me-2" width="50" height="50">
-              <span>Lun - Vier: 9a.m. - 2p.m. 3p.m. -6:00p.m.</span>
-            </div>
-            <div class="col d-flex align-items-center">
-              <img src="imagenes/numero.png" alt="SSL" class="me-2" width="50" height="50">
-              <span>+56 9 1234 5678</span>
-            </div>
-            <div class="col d-flex align-items-center">
-              <img src="imagenes/ola.png" alt="Autoadministrable" class="me-2" width="50" height="50">
-              <span>contacto@futuroltda.cl</span>
-            </div>
-          </div>
-          
-        
-
-        
-        
-      </div>
+ <!-- Sección de Cursos -->
+<section id="cursos" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Nuestros Cursos</h2>
+      <p>
+        En Futuro Ltda, ofrecemos una amplia variedad de cursos diseñados para ayudarte a mejorar las habilidades clave de tu negocio. Ya sea que estés buscando optimizar la gestión de tu empresa, expandir tu presencia en línea o fortalecer tus capacidades de liderazgo, nuestros cursos están diseñados para proporcionarte herramientas prácticas y conocimientos actualizados que te permitirán enfrentar los desafíos del mundo empresarial actual. No importa si eres un emprendedor en sus primeros pasos o un profesional buscando avanzar en tu carrera, tenemos el curso perfecto para ti. ¡Invierte en tu futuro hoy mismo!
+      </p>
+      
   
-      <!-- Formulario a la derecha -->
-      <div class="col-md-6">
-        <!-- Formulario de Contacto -->
-<div class="container my-5">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <form id="formularioContacto">
-        <div class="mb-3">
-          <label for="nombre" class="form-label">Nombre</label>
-          <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
-        </div>
-
-        <div class="input-group mb-3">
-          <input type="email" class="form-control" id="correo" placeholder="Correo" aria-label="Correo" required>
-        </div>
-
-        <div class="mb-3">
-          <label for="telefono" class="form-label">Teléfono</label>
-          <input type="tel" class="form-control" id="telefono" placeholder="Teléfono" required pattern="[0-9]{9,12}">
-        </div>
-
-        <div class="mb-3">
-          <label for="mensaje" class="form-label">Mensaje (opcional)</label>
-          <textarea class="form-control" id="mensaje" rows="3" placeholder="Escribe tu mensaje..."></textarea>
-        </div>
-
-        <div class="text-center mt-3 mb-5">
-          <button type="submit" class="btn btn-primary w-auto">Enviar</button>
-        </div>
-      </form>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Curso</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Duración</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Curso 1 -->
+          <tr>
+            <th scope="row">1</th>
+            <td>Curso de Asesoría Empresarial</td>
+            <td>Este curso te ayudará a mejorar la gestión de tu empresa con herramientas prácticas y estratégicas.</td>
+            <td>3 semanas</td>
+            <td>12 de junio - 3 de julio</td>
+            <td>$300,000</td>
+            <td><button class="btn btn-primary btn-sm" onclick="agregarAlCarrito('Curso de Asesoría Empresarial', 300000)">Agregar</button></td>
+          </tr>
+  
+          <!-- Curso 2 -->
+          <tr>
+            <th scope="row">2</th>
+            <td>Curso de Marketing Digital</td>
+            <td>Aprende las mejores técnicas de marketing digital para aumentar la visibilidad de tu empresa en línea.</td>
+            <td>4 semanas</td>
+            <td>15 de julio - 12 de agosto</td>
+            <td>$250,000</td>
+            <td><button class="btn btn-primary btn-sm" onclick="agregarAlCarrito('Curso de Marketing Digital', 250000)">Agregar</button></td>
+          </tr>
+  
+          <!-- Curso 3 -->
+          <tr>
+            <th scope="row">3</th>
+            <td>Curso de Capacitación en Liderazgo</td>
+            <td>Desarrolla tus habilidades de liderazgo y mejora tu capacidad para gestionar equipos de trabajo.</td>
+            <td>5 semanas</td>
+            <td>1 de agosto - 5 de septiembre</td>
+            <td>$350,000</td>
+            <td><button class="btn btn-primary btn-sm" onclick="agregarAlCarrito('Curso de Capacitación en Liderazgo', 350000)">Agregar</button></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-  </div>
-</div>
-
-      </div>
-    </div>
-  </div>
+  </section>
   
-  
+  <!-- Agregar al carrito - Función JavaScript -->
+  <script>
+    function agregarAlCarrito(curso, precio) {
+      // Lógica para agregar al carrito
+      console.log(`Agregado al carrito: ${curso} - Precio: $${precio}`);
+    }
+  </script>
   
 
 
@@ -237,6 +218,45 @@
 <a href="https://wa.me/56956602092" target="_blank" class="whatsapp-fijo">
   <img src="imagenes/whatsapp.png" alt="WhatsApp" width="75" height="75">
 </a>
+<script>
+    let carrito = []; // Arreglo para almacenar los productos
+
+    // Función para agregar al carrito
+    function agregarAlCarrito(curso, precio) {
+      // Crear un objeto con los datos del producto
+      const producto = { curso, precio };
+      // Agregar el producto al carrito
+      carrito.push(producto);
+      // Actualizar el carrito
+      actualizarCarrito();
+    }
+
+    // Función para actualizar el carrito
+    function actualizarCarrito() {
+      // Actualizar el contador de productos en el carrito
+      document.getElementById('carrito-count').innerText = carrito.length;
+
+      // Actualizar la lista de productos en el carrito
+      const carritoLista = document.getElementById('carrito-lista');
+      carritoLista.innerHTML = ''; // Limpiar la lista actual
+
+      carrito.forEach((producto, index) => {
+        const li = document.createElement('li');
+        li.innerText = `${producto.curso} - $${producto.precio}`;
+        carritoLista.appendChild(li);
+      });
+
+      // Calcular el total
+      const total = carrito.reduce((sum, producto) => sum + producto.precio, 0);
+      document.getElementById('carrito-total').innerText = total;
+    }
+
+    // Función para vaciar el carrito
+    function vaciarCarrito() {
+      carrito = []; // Limpiar el carrito
+      actualizarCarrito(); // Actualizar el carrito en la interfaz
+    }
+  </script>
 
 <style>
   .whatsapp-fijo {

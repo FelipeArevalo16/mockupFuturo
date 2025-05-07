@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Futuro Ltda</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous" />
+    <style>
+        .btn {
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #f27c1e;
+            /* Naranjo */
+            border-color: #f27c1e;
+            color: white;
+        }
+    </style>
+    <style>
+        .day-cell {
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            margin: auto;
+            background-color: #f8f9fa;
+            user-select: none;
+        }
+
+        .day-cell.selected {
+            background-color: #f27c1e;
+            color: white;
+            font-weight: bold;
+        }
+
+        .dia-btn {
+            width: 100%;
+            height: 100%;
+            padding: 15px 0;
+            border: none;
+            background-color: #ffffff;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .dia-btn.selected {
+            background-color: #f27c1e;
+            color: white;
+            /* Esto también debe cambiar */
+        }
+    </style>
+
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <!--Barra de Navegacion-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="imagenes/AFLogo.png" alt="Futuro Ltda" height="60">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav justify-content-center w-100 mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Servicios
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="empresa.html">Crea tu empresa</a></li>
+                            <li><a class="dropdown-item" href="marketing.html">Marketing digital</a></li>
+                            <li><a class="dropdown-item" href="asesoria.html">Asesoria personalizada</a></li>
+                            <li><a class="dropdown-item" href="asesoriagrupal.html">Asesoria grupal</a></li>
+                            <li><a class="dropdown-item" href="capacitacion.html">Capacitaciones</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="blog.html">Blog</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <a href="login.html" class="btn btn-outline-success">Login</a>
+                </form>
+                <div class="dropdown">
+                    <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        🛒 Carrito <span class="badge bg-danger" id="carrito-count">0</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end p-3" style="min-width: 250px;">
+                        <li>
+                            <strong>Carrito de compras</strong>
+                            <ul class="list-unstyled" id="carrito-lista"></ul>
+                            <p class="mt-2">Total: $<span id="carrito-total">0</span></p>
+                            <button class="btn btn-sm btn-danger w-100" onclick="vaciarCarrito()">Vaciar</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+    </nav>
+    <div class="container my-5">
+        <h4 class="text-center mb-4">Calendario - Mayo 2025</h4>
+        <h4 class="text-center mb-4">Asesorias grupales</h4>
+        <p>
+            Nuestras asesorías grupales están diseñadas para ofrecerte herramientas prácticas y estrategias
+            personalizadas que impulsarán el crecimiento de tu empresa. Con la guía de expertos, podrás resolver dudas,
+            optimizar tus procesos y descubrir nuevas oportunidades, todo dentro de un entorno colaborativo que potencia
+            el aprendizaje conjunto. 
+        </p>
+        <p>
+            ¡Reserva tu espacio y lleva tu negocio al siguiente nivel!
+        </p>
+
+        <table class="table table-bordered text-center">
+            <thead class="table-light">
+                <tr>
+                    <th>Lun</th>
+                    <th>Mar</th>
+                    <th>Mié</th>
+                    <th>Jue</th>
+                    <th>Vie</th>
+                    <th>Sáb</th>
+                    <th>Dom</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Semana 1 -->
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <div class="day-cell" data-day="1">1</div>
+                    </td>
+                    <td>
+                        <div class="day-cell" data-day="2">2</div>
+                    </td>
+                    <td>
+                        <div class="day-cell" data-day="3">3</div>
+                    </td>
+                    <td>
+                        <div class="day-cell" data-day="4">4</div>
+                    </td>
+                </tr>
+                <!-- Semana 2 -->
+                <tr>
+                    <td>
+                        <div class="day-cell" data-day="5">5</div>
+                    </td>
+                    <td>
+                        <div class="day-cell" data-day="6">6</div>
+                    </td>
+                    <td>
+                        <div class="day-cell" data-day="7">7</div>
+                    </td>
+                    <td>
+                        <div class="day-cell" data-day="8">8</div>
+                    </td>
+                    <td>
+                        <div class="day-cell" data-day="9">9</div>
+                    </td>
+                    <td>
+                        <div class="day-cell" data-day="10">10</div>
+                    </td>
+                    <td>
+                        <div class="day-cell" data-day="11">11</div>
+                    </td>
+                </tr>
+
+                <!-- Semana 3 -->
+                <tr>
+                    <td>
+                        <div class="day-cell" data-day="12">12</div>
+                    </td>
+                    <td>
+                        <div class="day-cell" data-day="13">13</div>
+                    </td>
+                    <td>
+                        <div class="day-cell" data-day="14">14</div>
+                    </td>
+                    <td>
+                        <div class="day-cell" data-day="15">15</div>
+                    </td>
+                    <td>
+                        <div class="day-cell" data-day="16">16</div>
+                    </td>
+                    <td>
+                        <div class="day-cell" data-day="17">17</div>
+                    </td>
+                    <td>
+                        <div class="day-cell" data-day="18">18</div>
+                    </td>
+                </tr>
+
+                <!-- Semana 4 -->
+                <tr>
+                    <td>
+                        <div class="day-cell" data-day="19">19</div>
+                    </td>
+                    <td>
+                        <div class="day-cell" data-day="20">20</div>
+                    </td>
+                    <td>
+                        <div class="day-cell" data-day="21">21</div>
+                    </td>
+                    <td>
+                        <div class="day-cell" data-day="22">22</div>
+                    </td>
+                    <td>
+                        <div class="day-cell" data-day="23">23</div>
+                    </td>
+                    <td>
+                        <div class="day-cell" data-day="24">24</div>
+                    </td>
+                    <td>
+                        <div class="day-cell" data-day="25">25</div>
+                    </td>
+                </tr>
+
+                <!-- Semana 5 -->
+                <tr>
+                    <td>
+                        <div class="day-cell" data-day="26">26</div>
+                    </td>
+                    <td>
+                        <div class="day-cell" data-day="27">27</div>
+                    </td>
+                    <td>
+                        <div class="day-cell" data-day="28">28</div>
+                    </td>
+                    <td>
+                        <div class="day-cell" data-day="29">29</div>
+                    </td>
+                    <td>
+                        <div class="day-cell" data-day="30">30</div>
+                    </td>
+                    <td>
+                        <div class="day-cell" data-day="31">31</div>
+                    </td>
+                    <td></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <select class="form-select w-auto" aria-label="Default select example">
+          <option selected>Cuantas personas asistiran?</option>
+          <option value="1">10-20</option>
+          <option value="2">20-30</option>
+          <option value="3">30-50</option>
+        </select>
+      </div>
+
+    <div class="d-flex justify-content-center mt-3 contenedor-margen">
+        <button class="btn btn-primary" onclick="agregarAlCarrito('Servicio Asesoria', 15000)">Agregar al
+            carrito</button>
+    </div>
+
+    <!-- CSS -->
+    <style>
+        .contenedor-margen {
+            margin-bottom: 20px;
+        }
+    </style>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-4 pb-2 mt-auto">
+        <div class="container text-center text-md-start">
+            <div class="row">
+                <!-- Sección 1 -->
+                <div class="col-md-4 mb-3">
+                    <h5 class="text-uppercase">Futuro Ltda</h5>
+                    <img src="imagenes/AFLogo.png" alt="Futuro Ltda" height="60">
+                    <p>
+                        Impulsando tus ideas hacia el futuro. Apoyamos emprendedores con servicios de asesoría,
+                        marketing y
+                        formación.
+                    </p>
+                </div>
+
+                <!-- Sección 2 -->
+                <div class="col-md-4 mb-3">
+                    <h5 class="text-uppercase">Enlaces útiles</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white text-decoration-none">Inicio</a></li>
+                        <li><a href="nosotros.html" class="text-white text-decoration-none">Nosotros</a></li>
+                        <li><a href="contacto.html" class="text-white text-decoration-none">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <!-- Sección 3 -->
+                <div class="col-md-4 mb-3">
+                    <h5 class="text-uppercase">Contacto</h5>
+                    <p>Email: contacto@futuroltda.cl</p>
+                    <p>Teléfono: +56 9 1234 5678</p>
+                    <p>Dirección: Los Angeles, Chile</p>
+                </div>
+            </div>
+
+            <hr class="border-light" />
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Futuro Ltda. Todos los derechos reservados.</p>
+            </div>
+        </div>
+        <div class="text-center mt-3">
+            <a href="https://www.facebook.com/profile.php?id=61560354453187&locale=es_LA" target="_blank"
+                class="text-white mx-2">
+                <i class="bi bi-facebook" style="font-size: 1.5rem;"></i>
+            </a>
+            <a href="https://www.instagram.com/asesoriasfuturoltda/" target="_blank" class="text-white mx-2">
+                <i class="bi bi-instagram" style="font-size: 1.5rem;"></i>
+            </a>
+            <a href="https://x.com/asesoriasfuturo" target="_blank" class="text-white mx-2">
+                <i class="bi bi-twitter" style="font-size: 1.5rem;"></i>
+            </a>
+            <a href="https://wa.me/56956602092" target="_blank" class="text-white mx-2">
+                <i class="bi bi-whatsapp" style="font-size: 1.5rem;"></i>
+            </a>
+        </div>
+    </footer>
+    <script>
+        let carrito = [];
+
+        function agregarAlCarrito(nombre, precio) {
+            carrito.push({ nombre, precio });
+            actualizarCarrito();
+        }
+
+        function vaciarCarrito() {
+            carrito = [];
+            actualizarCarrito();
+        }
+
+        function actualizarCarrito() {
+            const lista = document.getElementById('carrito-lista');
+            const totalSpan = document.getElementById('carrito-total');
+            const count = document.getElementById('carrito-count');
+
+            lista.innerHTML = '';
+            let total = 0;
+
+            carrito.forEach((item, index) => {
+                total += item.precio;
+                const li = document.createElement('li');
+                li.className = 'd-flex justify-content-between align-items-center mb-1';
+                li.innerHTML = `
+          <span>${item.nombre}</span>
+          <button class="btn btn-sm btn-outline-danger" onclick="eliminarItem(${index})">X</button>
+        `;
+                lista.appendChild(li);
+            });
+
+            totalSpan.textContent = total;
+            count.textContent = carrito.length;
+        }
+
+        function eliminarItem(index) {
+            carrito.splice(index, 1);
+            actualizarCarrito();
+        }
+    </script>
+    </script>
+    <a href="https://wa.me/56956602092" target="_blank" class="whatsapp-fijo">
+        <img src="imagenes/whatsapp.png" alt="WhatsApp" width="75" height="75">
+    </a>
+
+    <style>
+        .whatsapp-fijo {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-fijo:hover {
+            transform: scale(1.1);
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const dayCells = document.querySelectorAll('.day-cell');
+
+            dayCells.forEach(cell => {
+                cell.addEventListener('click', () => {
+                    cell.classList.toggle('selected');
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

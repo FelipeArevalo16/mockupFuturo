@@ -21,11 +21,10 @@
       border-color: #f27c1e;
       color: white;
     }
-  </style>
-  
-  <style>
+
     /* Imagen de fondo fija y con formato 16:9 */
     .hero-section {
+      padding-bottom: 60px;
       background-image: url('imagenes/portada1.jpg'); /* Reemplaza con la ruta de tu imagen */
       background-position: center;
       background-attachment: fixed;
@@ -43,6 +42,7 @@
 
     /* Sección de Servicios */
     .services-section {
+      
       padding: 50px 0;
       background-color: #f8f9fa;
     }
@@ -92,9 +92,116 @@
     .whatsapp-fijo:hover {
       transform: scale(1.1);
     }
+    @keyframes slideInLeft {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Estilo inicial para los elementos */
+.animate-left,
+.animate-right {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100%); /* Los elementos comienzan fuera de la vista (a la derecha) */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Estilo cuando el elemento se vuelve visible (desliza desde la izquierda) */
+.animate-left.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0); /* Desliza desde la izquierda */
+}
+
+/* Estilo cuando el elemento se vuelve visible (desliza desde la derecha) */
+.animate-right.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0); /* Desliza desde la derecha */
+}
+
+.animated-text {
+    display: inline-block; /* Necesario para que funcione el movimiento */
+    animation: colorChange 5s infinite alternate, moveUpDown 5s infinite alternate;
+  }
+
+  @keyframes colorChange {
+    0% {
+      color: blue;
+    }
+    100% {
+      color: orange;
+    }
+  }
+
+  @keyframes moveUpDown {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px); /* Movimiento hacia arriba */
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  .carousel-inner .carousel-item img {
+  width: 100%;
+  height: 750px; /* Ajusta la altura según prefieras */
+  object-fit: cover;
+  object-position: center;
+}
+
+.counter-section {
+  background-color: #f8f8f8;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.counter-title {
+  font-size: 2em;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.counters {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.counter-box {
+  flex: 1 1 150px;
+  max-width: 200px;
+}
+
+.counter {
+  font-size: 3em;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
   </style>
 </head>
-</head>
+
 <body class="d-flex flex-column min-vh-100">
     <!--Barra de Navegacion-->
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -136,6 +243,8 @@
               <li><a class="dropdown-item" href="empresa.html">Crea tu empresa</a></li>
               <li><a class="dropdown-item" href="marketing.html">Marketing digital</a></li>
               <li><a class="dropdown-item" href="asesoria.html">Asesoria personalizada</a></li>
+              <li><a class="dropdown-item" href="asesoriagrupal.html">Asesoria grupal</a></li>
+              <li><a class="dropdown-item" href="capacitacion.html">Capacitaciones</a></li>
             </ul>
           </li>
           <li class="nav-item">
@@ -169,7 +278,7 @@
     <!-- Sección Hero -->
     <section class="hero-section">
       <div class="hero-text">
-        <h1>Bienvenido a Futuro Ltda</h1>
+        <h1><span class="animated-text">Futuro Ltda</span></h1>
         <p>Transformamos tus ideas en negocios exitosos</p>
       </div>
     </section>
@@ -182,58 +291,132 @@
       }
     </style>
     
-    <div class="container services-section">
-      <div class="row text-center">
-        <!-- Card 1 -->
-
-        <div class="col-md-4 mb-4">
-          <div class="card shadow-sm border-light rounded">
+    <!-- Sección de Servicios -->
+<div class="container services-section">
+  <div class="row text-center">
+    <!-- Card 1 -->
+    <div class="col-md-4 mb-4">
+      <div class="card shadow-sm border-light rounded card-flip">
+        <div class="card-inner">
+          <!-- Frontal de la tarjeta -->
+          <div class="card-front">
             <img src="imagenes/servicio3.jpg" class="card-img-top" alt="Servicio 3">
             <div class="card-body">
               <h5 class="card-title">Asesoría Personalizada</h5>
               <p class="card-text">Obtén asesoría especializada para llevar tu proyecto a un nuevo nivel.</p>
+            </div>
+          </div>
+          <!-- Reverso de la tarjeta -->
+          <div class="card-back">
+            <div class="card-body d-flex align-items-center justify-content-center">
               <a href="asesoria.html" class="btn btn-primary">Más Información</a>
             </div>
           </div>
         </div>
-      
-        <div class="col-md-4 mb-4">
-          <div class="card shadow-sm border-light rounded">
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col-md-4 mb-4">
+      <div class="card shadow-sm border-light rounded card-flip">
+        <div class="card-inner">
+          <!-- Frontal de la tarjeta -->
+          <div class="card-front">
             <img src="imagenes/servicio1.jpg" class="card-img-top" alt="Servicio 1">
             <div class="card-body">
               <h5 class="card-title">Crea tu empresa</h5>
               <p class="card-text">Te ayudamos a crear y registrar tu empresa de manera rápida y efectiva.</p>
+            </div>
+          </div>
+          <!-- Reverso de la tarjeta -->
+          <div class="card-back">
+            <div class="card-body d-flex align-items-center justify-content-center">
               <a href="empresa.html" class="btn btn-primary">Más Información</a>
             </div>
           </div>
         </div>
-    
-        <!-- Card 2 -->
-        <div class="col-md-4 mb-4">
-          <div class="card shadow-sm border-light rounded">
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-md-4 mb-4">
+      <div class="card shadow-sm border-light rounded card-flip">
+        <div class="card-inner">
+          <!-- Frontal de la tarjeta -->
+          <div class="card-front">
             <img src="imagenes/servicio2.jpg" class="card-img-top" alt="Servicio 2">
             <div class="card-body">
               <h5 class="card-title">Marketing Digital</h5>
               <p class="card-text">Lleva tu negocio al siguiente nivel con estrategias de marketing digital personalizadas.</p>
+            </div>
+          </div>
+          <!-- Reverso de la tarjeta -->
+          <div class="card-back">
+            <div class="card-body d-flex align-items-center justify-content-center">
               <a href="marketing.html" class="btn btn-primary">Más Información</a>
             </div>
           </div>
         </div>
-    
-        <!-- Card 3 -->
-        
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- Estilos CSS para el efecto de girar -->
+<style>
+  /* Configuración para las tarjetas */
+  .card-flip {
+  perspective: 1000px;
+  height: 100%; /* Asegura que se expanda según el contenido */
+  min-height: 400px; /* Ajusta este valor según tu contenido */
+}
+
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+  }
+
+  .card-flip:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .card-front, .card-back {
+    position: absolute;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+  }
+
+  .card-front {
+    background-color: #fff;
+  }
+
+  .card-back {
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotateY(180deg);
+  }
+
+  .card-img-top {
+    height: 200px; /* Ajusta la altura según prefieras */
+    object-fit: cover;
+  }
+</style>
+
     </div>
     
     <div class="container mt-5">
       <div class="row align-items-center">
-        <!-- Imagen a la izquierda -->
-        <div class="col-md-6">
+        <div class="col-md-6 animate-left">
           <img src="imagenes/quienes-somos.jpeg" class="img-fluid" alt="Quienes Somos">
         </div>
-    
-        <!-- Texto a la derecha -->
-        <div class="col-md-6">
+        <div class="col-md-6 animate-right">
           <h2>¿Quiénes somos?</h2>
           <p>
             En Futuro Ltda., somos un equipo de profesionales apasionados por ayudar a emprendedores a alcanzar sus objetivos. 
@@ -243,6 +426,26 @@
         </div>
       </div>
     </div>
+    
+    <section class="counter-section">
+      <h2 class="counter-title">Nuestros Logros</h2>
+      <div class="counters">
+        <div class="counter-box">
+          <span class="counter" data-target="3500">0</span>
+          <p>Clientes Satisfechos</p>
+        </div>
+        <div class="counter-box">
+          <span class="counter" data-target="20">0</span>
+          <p>Años de Experiencia</p>
+        </div>
+        <div class="counter-box">
+          <span class="counter" data-target="500">0</span>
+          <p>Proyectos Completados</p>
+        </div>
+      </div>
+    </section>
+    
+    
     <!-- Sección de Noticias -->
 <div class="container mt-5">
   <h2 class="text-center mb-4">Noticias</h2>
@@ -384,6 +587,56 @@
 <a href="https://wa.me/56956602092" target="_blank" class="whatsapp-fijo">
   <img src="imagenes/whatsapp.png" alt="WhatsApp" width="75" height="75">
 </a>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target); // Solo se anima una vez
+        }
+      });
+    }, {
+      threshold: 0.2 // 20% del elemento visible activa la animación
+    });
+
+    document.querySelectorAll(".animate-left, .animate-right").forEach(el => {
+      observer.observe(el);
+    });
+  });
+  const counters = document.querySelectorAll('.counter');
+
+const animateCounters = () => {
+  counters.forEach(counter => {
+    counter.innerText = '0';
+    const target = +counter.getAttribute('data-target');
+    const updateCounter = () => {
+      const current = +counter.innerText;
+      const increment = target / 100;
+      if (current < target) {
+        counter.innerText = Math.ceil(current + increment);
+        setTimeout(updateCounter, 15);
+      } else {
+        counter.innerText = target;
+      }
+    };
+    updateCounter();
+  });
+};
+
+let started = false;
+window.addEventListener('scroll', () => {
+  const section = document.querySelector('.counter-section');
+  const sectionTop = section.offsetTop;
+  const scrollPos = window.scrollY + window.innerHeight;
+
+  if (!started && scrollPos > sectionTop) {
+    animateCounters();
+    started = true;
+  }
+});
+
+</script>
 
 <style>
   .whatsapp-fijo {
@@ -398,5 +651,6 @@
     transform: scale(1.1);
   }
 </style>
+
 </body>
 </html>
