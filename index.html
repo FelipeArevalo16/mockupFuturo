@@ -198,6 +198,122 @@
   font-weight: bold;
   color: #2c3e50;
 }
+.rockstars-section {
+  background-color: #f4f4f4;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.rockstars-section .container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+.rockstars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.rockstar-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.rockstar-card:hover {
+  transform: translateY(-5px);
+}
+
+.rockstar-card img {
+  max-width: 100%;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.rockstar-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  color: #0072ff;
+}
+
+.rockstar-card p {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.rockstar-card a {
+  text-decoration: none;
+  color: #0072ff;
+  font-weight: bold;
+}
+
+.call-to-action {
+  margin-top: 30px;
+}
+
+.call-to-action p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #0072ff;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #005fcc;
+}
+.card-back {
+  background-color: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotateY(180deg);
+  overflow: hidden;
+  position: relative;
+}
+
+.blurred-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  z-index: 0;
+}
+
+.card-back .card-body {
+  z-index: 1;
+}
+
 
   </style>
 </head>
@@ -308,10 +424,12 @@
           </div>
           <!-- Reverso de la tarjeta -->
           <div class="card-back">
-            <div class="card-body d-flex align-items-center justify-content-center">
+            <div class="blurred-bg" style="background-image: url('imagenes/servicio3.jpg');"></div>
+            <div class="card-body d-flex align-items-center justify-content-center position-relative">
               <a href="asesoria.html" class="btn btn-primary">Más Información</a>
             </div>
           </div>
+          
         </div>
       </div>
     </div>
@@ -330,8 +448,9 @@
           </div>
           <!-- Reverso de la tarjeta -->
           <div class="card-back">
-            <div class="card-body d-flex align-items-center justify-content-center">
-              <a href="empresa.html" class="btn btn-primary">Más Información</a>
+            <div class="blurred-bg" style="background-image: url('imagenes/servicio1.jpg');"></div>
+            <div class="card-body d-flex align-items-center justify-content-center position-relative">
+              <a href="asesoria.html" class="btn btn-primary">Más Información</a>
             </div>
           </div>
         </div>
@@ -352,8 +471,9 @@
           </div>
           <!-- Reverso de la tarjeta -->
           <div class="card-back">
-            <div class="card-body d-flex align-items-center justify-content-center">
-              <a href="marketing.html" class="btn btn-primary">Más Información</a>
+            <div class="blurred-bg" style="background-image: url('imagenes/servicio2.jpg');"></div>
+            <div class="card-body d-flex align-items-center justify-content-center position-relative">
+              <a href="asesoria.html" class="btn btn-primary">Más Información</a>
             </div>
           </div>
         </div>
@@ -445,6 +565,40 @@
       </div>
     </section>
     
+    <section class="rockstars-section">
+      <div class="container">
+        <h2 class="section-title">Nuestros Rockstars</h2>
+        <p class="section-subtitle">Conoce a las startups que están revolucionando sus industrias y dejando una huella imborrable en el ecosistema emprendedor.</p>
+    
+        <div class="rockstars-grid">
+          <div class="rockstar-card">
+            <img src="imagenes/notcologo.png" alt="NotCo Logo">
+            <h3>NotCo</h3>
+            <p>A través de inteligencia artificial, NotCo sustituye alimentos de origen animal usando el software más sibarita del mundo: Giuseppe.</p>
+            <a href="https://notco.com/cl/" target="_blank">Ver más</a>
+          </div>
+    
+          <div class="rockstar-card">
+            <img src="imagenes/lab4ulogo.png" alt="Lab4U Logo">
+            <h3>Lab4U</h3>
+            <p>Lab4U convierte tu celular en un laboratorio para aprender ciencias. Un celular es todo lo que necesitas.</p>
+            <a href="https://lab4u.co/es/inicio/" target="_blank">Ver más</a>
+          </div>
+    
+          <div class="rockstar-card">
+            <img src="imagenes/simplilogo.png" alt="SimpliRoute Logo">
+            <h3>SimpliRoute</h3>
+            <p>SimpliRoute optimiza la logística de despacho mediante software, reduciendo tiempos de espera en compras online.</p>
+            <a href="https://simpliroute.com/es" target="_blank">Ver más</a>
+          </div>
+        </div>
+    
+        <div class="call-to-action">
+          <p>¿Quieres ser nuestro próximo Rockstar?</p>
+          <a href="empresa.html" target="_blank" class="cta-button">Postula aquí</a>
+        </div>
+      </div>
+    </section>
     
     <!-- Sección de Noticias -->
 <div class="container mt-5">
